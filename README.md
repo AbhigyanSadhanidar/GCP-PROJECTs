@@ -1,2 +1,16 @@
-# GCP-PROJECTs
-Cloud geek
+gcloud compute instances create abhigyan-first-vm \
+    --project=uplifted-engine-415614 \
+    --zone=asia-south2-a \
+    --machine-type=e2-medium \
+    --network-interface=network-tier=PREMIUM,stack-type=IPV4_ONLY,subnet=default \
+    --maintenance-policy=MIGRATE \
+    --provisioning-model=STANDARD \
+    --service-account=2340200654-compute@developer.gserviceaccount.com \
+    --scopes=https://www.googleapis.com/auth/devstorage.read_only,https://www.googleapis.com/auth/logging.write,https://www.googleapis.com/auth/monitoring.write,https://www.googleapis.com/auth/servicecontrol,https://www.googleapis.com/auth/service.management.readonly,https://www.googleapis.com/auth/trace.append \
+    --tags=http-server \
+    --create-disk=auto-delete=yes,boot=yes,device-name=abhigyan-first-vm,image=projects/debian-cloud/global/images/debian-12-bookworm-v20240213,mode=rw,size=10,type=projects/uplifted-engine-415614/zones/asia-south2-a/diskTypes/pd-balanced \
+    --no-shielded-secure-boot \
+    --shielded-vtpm \
+    --shielded-integrity-monitoring \
+    --labels=learning=knowledge,devops=journey,goog-ec-src=vm_add-gcloud \
+    --reservation-affinity=any
